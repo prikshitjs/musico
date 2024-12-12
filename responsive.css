@@ -1,0 +1,33 @@
+@media only screen and (max-width: 800px){
+    .right_page
+    {
+        width: 100%;
+    }
+    .slidebar
+    {
+        position: absolute;
+        z-index: 1000;
+        /* opacity: 20%; */
+        transform: translateX(-190px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .show
+    {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu
+    {
+        display: none;
+    }
+    #menubar
+    {
+        display: block;
+    }
+    .menubar-move
+    {
+        transform: translateX(150px);
+    }
+}

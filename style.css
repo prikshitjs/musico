@@ -11,6 +11,27 @@
     font-family: var(--poppins);
     box-sizing: border-box;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #000; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #484848; 
+    /* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+}
 body
 {
     background: #1d1d1d;
@@ -23,29 +44,23 @@ body
 {
     color: #fff;
     height: 100vh;
-    background: linear-gradient(rgb(63, 63, 63),#000);
-    width: fit-content;
+    /* background: linear-gradient(251deg, rgb(72 72 72), #000); */
+    background: #252525;
+    width: 200px;
     padding: 10px;
+    transition: 0.4s;
 }
 .slidebar h1
 {
     margin-bottom: 40px;
     position: relative;
     z-index: 100;
-}
-.slidebar h1::before
-{
-    content: '';
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    background: green;
-    bottom: 9px;
-    right: 6px;
-    z-index: -1;
-    padding: 2px;
-    border-radius: 5px;
-    animation: rotate 4s ease-in-out infinite;
+    font-family: var(--cursive);
+    /* background: green; */
+    width: fit-content;
+    padding: 0 7px 0 2px;
+    border: 3px double #fff;
+    border-radius: 7px;
 }
 @keyframes rotate
 {
@@ -57,6 +72,19 @@ body
     {
         rotate: 360deg;
     }
+}
+#menubar
+{
+    color: #fff;
+    font-size: 25px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    filter: drop-shadow(0 0 7px #000);
+    display: none;
+    cursor: pointer;
+    transition: 0.4s;
 }
 .slidebar ul
 {
@@ -77,6 +105,7 @@ body
     /* font-size: 13px; */
     cursor: pointer;
     transition: 0.2s;
+    width: fit-content;
 }
 .slidebar ul li:hover
 {
@@ -86,16 +115,23 @@ body
 {
     margin-left: 20px;
     margin-bottom: 10px;
-    background: linear-gradient(90deg,#484848,#252525);
+    background: #454545;
     padding: 2px 5px;
     border-radius: 4px;
+}
+.right_page
+{
+    height: 100vh;
+    width: calc(100% - 139px);
+    overflow-y: scroll;
 }
 .menu
 {
     display: flex;
     justify-content: center;
-    width: calc(100% - 139px);
-    background: linear-gradient(90deg,#484848,#000);
+    width: 100%;
+    /* background: linear-gradient(90deg,#484848,#000); */
+    background: #252525;
     height: fit-content;
 }
 .menu ul
@@ -122,4 +158,50 @@ body
 .menu ul li a:hover
 {
     color: #484848;
+}
+.songs_album
+{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    align-items: center;
+}
+.album
+{
+    background: linear-gradient(60deg,#252525,#343434);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+    border: 1px solid #343434;
+}
+.album video
+{
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    width: 300px;
+    /* visibility: hidden; */
+}
+#playbtn
+{
+    position: absolute;
+    font-size: 28px;
+    right: 5px;
+    bottom: 5px;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+#playbtn:hover
+{
+    color: #c2c2c2;
+}
+.album:hover #playbtn
+{
+    opacity: 1;
 }
